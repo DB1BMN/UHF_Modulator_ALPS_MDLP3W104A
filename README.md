@@ -11,9 +11,7 @@ This Modulator contains the IC **Motorola MC44353**.
 * [Datenblatt Motorola MC44353](datasheet/motorola_mc44353_mc44354_mc44355_1998.pdf)
 
 ## Pictures
-TBD: Label parts with Ref-Designators
-
-<img width="400" src="/pictures/modulator_alps_mdlp3w104a_605067_THT.jpg"> <img width="400" src="/pictures/modulator_alps_mdlp3w104a_605067_SMD.jpg">
+<img width="640" src="pictures/UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.jpg">
 
 ## Controller Software
 TBD
