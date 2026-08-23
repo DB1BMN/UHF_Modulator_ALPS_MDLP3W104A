@@ -39,12 +39,11 @@ An initial Arduino firmware for the ESP8266 allowing step-by-step channel naviga
 ### I2C Bus
 The I2C bus requires **pull-up resistors** connected from +5 V to each data line. 
 A value of **3.3 kΩ** is a good starting point.
-
 When using a 3.3 V microcontroller, a level shifter may be necessary.
+
+<img align="left" width="320" src="pictures/V_5.2A_Modulator_I2C_Address_0xCA_ACK_Ristetimes_2026-08-23.png">
 On the modulator PCB, the I2C data lines feature 270 Ω series termination resistors. This can introduce additional challenges because the **SDA line is relatively "weak"**, rising up to 1 V when sinking 3 mA in the LOW state. The onboard resistors add an extra 270 mV drop per mA, which can result in an invalid logic state during the **ACK bit transfer**.
 For example, the ESP8266 accepts a maximum of 25% of its supply voltage as a valid LOW level (i.e., 825 mV when powered at 3.3 V).
-
-FIXME: screenshot of data transfer and ACK
 
 If communication issues occur, consider using an active bus driver or an I2C isolator (e.g., [ISO1540](https://www.ti.com/product/de-de/ISO1540)).
 
