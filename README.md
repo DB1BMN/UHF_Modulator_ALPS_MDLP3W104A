@@ -22,13 +22,26 @@ At the upper end, it reaches at least channel E73 (887.250 MHz, not allocated to
 
 ## Pictures
 * Libre Office Draw file with Ref Designators overlay referring to the [schematic](datasheet/alps_mdlp3w104a_1997.pdf) and BOM: [UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.odg](documents/UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.odg)
-* Raw jpg pictures can be found in: [pictures-Foler](pictures)
+* Raw jpg pictures can be found in: [pictures-Folder](pictures)
 
 <img width="640" src="pictures/UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.jpg">
 
 
 ## Controller Firmware
 An initial Arduino firmware for the ESP8266 allowing step-by-step channel navigation is available here: [TV Channel Controller for MC44353 on ESP8266](https://github.com/DB1BMN/TV_Channel_Controller_MC44353)
+
+
+## Measurement Results
+### VCO Tuning Range
+* A 28 V DC voltage from an "eBay Booster/Step-Up-Module" was applied to Pin 9 (**TUNING B+ **).
+* A 10 k resistor was soldered to the "cold" end of R17 i.e. node R17*C5 and the VCO voltage was fed into pin 8.
+  * FIXME: schematic diagram
+* The channels were stepped from S20 (294.25 MHz) to E76 (911.25 MHz).
+* The VCO DC was measured with a digital multimeter (DMM) and logged to the spreadsheet [alps_mdlp3w104a_vco_voltages_2026-08-15.ods](documents/alps_mdlp3w104a_vco_voltages_2026-08-15.ods) the result was plottet to the following [diagram](pictures/UHF-Modulator_ALPS_MDLP3W104A_VCO_Voltage_2026-08-12.png).
+  * The VCO gain in "MHz per Volt" was also calculated and plotted.
+
+<img width="640" src="pictures/UHF-Modulator_ALPS_MDLP3W104A_VCO_Voltage_2026-08-12.png">
+
 
 
 ## Pitfalls and Caveats
@@ -55,6 +68,7 @@ Since the MC44353 lacks both a dedicated pin and an internal status bit for the 
 An operational amplifier configured as a voltage follower is recommended because the VCO voltage node has a relatively high impedance (560 kΩ). The op-amp should feature low input bias current, high voltage tolerance (up to 33 V!), and sufficiently low input capacitance so it does not reduce the bandwidth when observing the step response (the phase detector operates with 31.25 kHz pulses). The [ADA4511-2](https://www.analog.com/en/products/ada4511-2.html) is a promising candidate for this purpose.
 
 For a simple PASS/FAIL test, you can measure the DC voltage with a standard multimeter: as long as the PLL is locked, the control loop will maintain the correct DC voltage across the varicap diode.
+An PLL out-of-lock will pull the VCO voltage either to the lower or upper boundary due its integrating characteristic.
 
 ### "Multistandard"
 Although the MC44353 is advertised as a "multistandard" modulator IC, it is more accurately described as **[multisystem](https://en.wikipedia.org/wiki/Broadcast_television_systems#ITU_standards)**, because it cannot generate a [color standard](https://en.wikipedia.org/wiki/Color_television#Color_standards) (e.g., PAL/NTSC color subcarriers) by itself. It only provides configuration options for the transmission parameters required by those systems (sound pre-emphasis, sound subcarrier offset, modulation depth, etc.).
