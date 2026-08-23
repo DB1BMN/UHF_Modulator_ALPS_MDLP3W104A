@@ -25,6 +25,9 @@ An initial Arduino firmware for the ESP8266 allowing step-by-step channel naviga
 
 
 ## Pictures
+* Libre Office Draf file with Ref Designators overlay and BOM: [UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.odg](documents/UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.odg)
+* Raw jpg pictures can be found in: [pictures-Foler](pictures)
+
 <img width="640" src="pictures/UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.jpg">
 
 
