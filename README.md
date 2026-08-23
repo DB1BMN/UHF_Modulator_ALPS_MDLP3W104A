@@ -34,9 +34,20 @@ A first Arduino-Firmware using an ESP8266 allowing stepping through all channels
 *  The tuning voltage **TUNING B+** for the VariCap diodes shall be in the range of **30 V +/- 3 V**. The typical current draw from this pin is specified with 0.1 mA
 
 ### I2C-Bus
+The I2C-Bus needs **pull-up resistors** from +5 V do each data line.
 
-### PLL Locking
+When using a 3.3 V microcontroller a level shifter might be necessary.
+On the modulator PCB the I2C data lines are equipped with 270 Ohm series termination resistors. This might bring additional challanges since the SDA line is "weak" sliding up to 1 V when sinking 3 mA in "Low" state. Those reistors will add additional 270 mV per mA of voltage drop which can cause an invalid state during ACK transfer.
+E.g. the ESP8266 accepts only 25% of its supply voltag as a valid "Low" level i.e. 825 mV when powered from 3.3 V!
+
+A value of **3.3 kOhm** seems to be good starting point.
+
+Whe problems occur consider using an active bus driver or an isolating (e. g. [ISO1540](https://www.ti.com/product/de-de/ISO1540)).
+
+
+### PLL Locking Indicator
 Since the MC44353 has neither a status bit nor pin for the PLL locking status you will have to evaluate the VCO voltage to obtain this information if needed.
+
 An operational amplifier used as a voltage follower is recommended since the VCO voltage is quite high impedance (560k). It should have low bias current, high input voltage (33 V!) and sufficient low input capacitance not to decrease bandwidth when observing step response (the phase detector is generating pulses with 31.25 kHz!). 
 The [ADA4511-2](https://www.analog.com/en/products/ada4511-2.html) looks like a promising candidate.
 
