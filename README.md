@@ -34,15 +34,16 @@ An initial Arduino firmware for the ESP8266 allowing step-by-step channel naviga
 ## Measurement Results
 ### VCO Tuning Range
 * A 28 V DC voltage from an "eBay Booster/Step-Up-Module" was applied to Pin 9 (**TUNING B+ **).
-* A 10 k resistor was soldered to the "cold" end of R17 i.e. node R17*C5 and the VCO voltage was fed into pin 8.
-  * FIXME: schematic diagram
+* A 10 k 0805 resistor was soldered from the "cold" end of R17 (i.e. node R17*C5) and pin 8 allowing to pick up the VCO voltage.
+  * <img width="320" src="pictures/modulator_alps_mdlp3w104a_measuring_vco_voltage_2026-08-23.png"> 
 * The channels were stepped from S20 (294.25 MHz) to E76 (911.25 MHz).
 * The VCO DC was measured with a digital multimeter (DMM) and logged to the spreadsheet [alps_mdlp3w104a_vco_voltages_2026-08-15.ods](documents/alps_mdlp3w104a_vco_voltages_2026-08-15.ods) the result was plottet to the following [diagram](pictures/UHF-Modulator_ALPS_MDLP3W104A_VCO_Voltage_2026-08-12.png).
   * The VCO gain in "MHz per Volt" was also calculated and plotted.
 
 <img width="640" src="pictures/UHF-Modulator_ALPS_MDLP3W104A_VCO_Voltage_2026-08-12.png">
 
-
+### VCO Step Response
+TBD
 
 ## Pitfalls and Caveats
 ### Supply
