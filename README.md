@@ -36,6 +36,10 @@ A first Arduino-Firmware using an ESP8266 allowing stepping through all channels
 ### I2C-Bus
 
 ### PLL Locking
+Since the MC44353 has neither status bit nor pin for the PLL locking status you will have to evaluate the VCO voltage to obtain this information if needed.
+An operational amplifier used as a voltage follower is recommended since the VCO voltage is quite high impedance (560k). It should have low bias current, high input voltage (33 V!) and sufficient low input capacitance not to decrease bandwidth when observing step response. The [ADA4511-2](https://www.analog.com/en/products/ada4511-2.html) looks like an promising candidate.
+
+For a quick PASS/FAIL test the DC voltage can be observed with an multimeter since the control loop will maintain the correct VCO DC voltage across the VariCap diode as far the PLL is in lock state.
 
 ### "Multistandard"
 
