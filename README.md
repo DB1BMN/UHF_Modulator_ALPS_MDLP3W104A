@@ -20,19 +20,18 @@ At the upper end, it reaches at least channel E73 (887.250 MHz, not allocated to
 * Datasheet "PLL Tuned UHF Audio/Video Modulator ICs for PAL, SECAM and NTSC TV Systems": [Motorola MC44353](datasheet/motorola_mc44353_mc44354_mc44355_1998.pdf)
 
 
-## Controller Firmware
-An initial Arduino firmware for the ESP8266 allowing step-by-step channel navigation is available here: [TV Channel Controller for MC44353 on ESP8266](https://github.com/DB1BMN/TV_Channel_Controller_MC44353)
-
-
 ## Pictures
-* Libre Office Draf file with Ref Designators overlay and BOM: [UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.odg](documents/UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.odg)
+* Libre Office Draw file with Ref Designators overlay referring to the [schematic](datasheet/alps_mdlp3w104a_1997.pdf) and BOM: [UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.odg](documents/UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.odg)
 * Raw jpg pictures can be found in: [pictures-Foler](pictures)
 
 <img width="640" src="pictures/UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.jpg">
 
 
-## Pitfalls and Caveats
+## Controller Firmware
+An initial Arduino firmware for the ESP8266 allowing step-by-step channel navigation is available here: [TV Channel Controller for MC44353 on ESP8266](https://github.com/DB1BMN/TV_Channel_Controller_MC44353)
 
+
+## Pitfalls and Caveats
 ### Supply
 * The supply voltage for both the analog and digital parts of the modulator is **+5 V ± 0.3 V** @ 90 mA max.
 * **Negative** supply voltage (GND) must be connected via the **chassis ground**. There is no dedicated GND pin on the pin header!
