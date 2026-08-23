@@ -18,8 +18,24 @@ The upper end reaches at least channel E73 (887.250 MHz, not allocated to TV bro
 * Datasheet & Schematic Modulator: [ALPS MDLP3W104A](datasheet/alps_mdlp3w104a_1997.pdf)
 * Datasheet "PLL Tuned UHF Audio/Video Modulator ICs for PAL, SECAM and NTSC TV Systems": [Motorola MC44353](datasheet/motorola_mc44353_mc44354_mc44355_1998.pdf)
 
+
+## Controller Firmware
+A first Arduino-Firmware using an ESP8266 allowing stepping through all channels has been presented here: [TV Channel Controller for MC44353 on ESP8266](https://github.com/DB1BMN/TV_Channel_Controller_MC44353)
+
+
 ## Pictures
 <img width="640" src="pictures/UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.jpg">
 
-## Controller Software
-TBD
+## Pitfalls and Caveats
+### Supply
+* The supply voltage of the modulator anlog and digital part is **+5 V +/- 0.3 V** @ 90 mA max.
+*  **Negative** supply voltage must be applied via **chassis ground**. There is no dedicated GND-pin on the pin header!
+*  The Antenna "Booster" i.e. a feed-thru-amplifier from the aerial can be separately supplied with 5 V / 45 mA if needed.
+*  The tuning voltage **TUNING B+** for the VariCap diodes shall be in the range of **30 V +/- 3 V**. The typical current draw from this pin is specified with 0.1 mA
+
+### I2C-Bus
+
+### PLL Locking
+
+### "Multistandard"
+
