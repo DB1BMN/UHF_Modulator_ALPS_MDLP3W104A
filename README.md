@@ -42,8 +42,7 @@ E.g. the ESP8266 accepts only 25% of its supply voltag as a valid "Low" level i.
 
 A value of **3.3 kOhm** seems to be good starting point.
 
-Whe problems occur consider using an active bus driver or an isolating (e. g. [ISO1540](https://www.ti.com/product/de-de/ISO1540)).
-
+Whe problems occur consider using an active bus driver or an isolator (e. g. [ISO1540](https://www.ti.com/product/de-de/ISO1540)).
 
 ### PLL Locking Indicator
 Since the MC44353 has neither a status bit nor pin for the PLL locking status you will have to evaluate the VCO voltage to obtain this information if needed.
@@ -54,4 +53,17 @@ The [ADA4511-2](https://www.analog.com/en/products/ada4511-2.html) looks like a 
 For a quick PASS/FAIL test the DC voltage can be observed with an multimeter since the control loop will maintain the correct VCO DC voltage across the VariCap diode as long the PLL is in lock state.
 
 ### "Multistandard"
+The MC44353 is advertized as a "multistandard" modulator IC but it should be rather called 
+**[mutlisystem[(https://en.wikipedia.org/wiki/Broadcast_television_systems#Notes_by_system)** 
+since it can not generate a signal according to certain [color standard](https://en.wikipedia.org/wiki/Color_television#Color_standards) on it self!
+It can only be set up to certain modulation parameters (sound preemphasis and offset, modulation depth etc.) required by these standards.
 
+You will have to provide a proper baseband video signal in [CVBS-format](https://en.wikipedia.org/wiki/Composite_video) from an analig source like a DVD-Player or
+Raspberry Pi's AV-out. -- Rumor has it that older versions of the Pi (up to V4) can generate a 
+[Teletext](https://en.wikipedia.org/wiki/Teletext) signal 
+(in Germany called Videotext ). 
+Check out
+[raspi-teletext](https://github.com/ali1234/raspi-teletext)
+and
+[VBIT2](https://github.com/peterkvt80/vbit2)
+for more details!
