@@ -37,8 +37,14 @@ A first Arduino-Firmware using an ESP8266 allowing stepping through all channels
 The I2C-Bus needs **pull-up resistors** from +5 V do each data line.
 
 When using a 3.3 V microcontroller a level shifter might be necessary.
-On the modulator PCB the I2C data lines are equipped with 270 Ohm series termination resistors. This might bring additional challanges since the SDA line is "weak" sliding up to 1 V when sinking 3 mA in "Low" state. Those reistors will add additional 270 mV per mA of voltage drop which can cause an invalid state during ACK transfer.
+On the modulator PCB the I2C data lines are equipped with 270 Ohm series termination resistors. 
+This might bring additional challanges since the 
+**SDA line is "weak"**
+sliding up to 1 V when sinking 3 mA in "Low" state. 
+Those reistors will add additional 270 mV per mA of voltage drop which can cause an invalid state during **ACK transfer**.
 E.g. the ESP8266 accepts only 25% of its supply voltag as a valid "Low" level i.e. 825 mV when powered from 3.3 V!
+
+FIXME: screenshot of data transfer and ACK
 
 A value of **3.3 kOhm** seems to be good starting point.
 
@@ -54,11 +60,11 @@ For a quick PASS/FAIL test the DC voltage can be observed with an multimeter sin
 
 ### "Multistandard"
 The MC44353 is advertized as a "multistandard" modulator IC but it should be rather called 
-**[mutlisystem[(https://en.wikipedia.org/wiki/Broadcast_television_systems#Notes_by_system)** 
+**[multisystem](https://en.wikipedia.org/wiki/Broadcast_television_systems#ITU_standards)** 
 since it can not generate a signal according to certain [color standard](https://en.wikipedia.org/wiki/Color_television#Color_standards) on it self!
 It can only be set up to certain modulation parameters (sound preemphasis and offset, modulation depth etc.) required by these standards.
 
-You will have to provide a proper baseband video signal in [CVBS-format](https://en.wikipedia.org/wiki/Composite_video) from an analig source like a DVD-Player or
+You will have to provide a proper baseband video signal in [CVBS-format](https://en.wikipedia.org/wiki/Composite_video) from an analog source like a DVD-Player or
 Raspberry Pi's AV-out. -- Rumor has it that older versions of the Pi (up to V4) can generate a 
 [Teletext](https://en.wikipedia.org/wiki/Teletext) signal 
 (in Germany called Videotext ). 
