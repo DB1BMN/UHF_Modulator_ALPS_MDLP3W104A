@@ -21,7 +21,7 @@ At the upper end, it reaches at least channel E73 (887.250 MHz, not allocated to
 
 
 ## Pictures
-* Libre Office Draw file with Ref Designators overlay referring to the [schematic](datasheet/alps_mdlp3w104a_1997.pdf) and BOM: [UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.odg](documents/UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.odg)
+* Libre Office Draw file with Ref Designators overlay referring to the [schematic](datasheet/alps_mdlp3w104a_1997.pdf) and BOM: [UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-24.odg](documents/UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-24.odg)
 * Raw jpg pictures can be found in: [pictures-Folder](pictures)
 
 <img width="800" src="pictures/UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.jpg">
