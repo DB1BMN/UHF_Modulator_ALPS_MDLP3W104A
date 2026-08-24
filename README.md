@@ -24,7 +24,7 @@ At the upper end, it reaches at least channel E73 (887.250 MHz, not allocated to
 * Libre Office Draw file with Ref Designators overlay referring to the [schematic](datasheet/alps_mdlp3w104a_1997.pdf) and BOM: [UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.odg](documents/UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.odg)
 * Raw jpg pictures can be found in: [pictures-Folder](pictures)
 
-<img width="640" src="pictures/UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.jpg">
+<img width="800" src="pictures/UHF-Modulator_ALPS_MDLP3W104A_Ref_Designator_2026-08-22.jpg">
 
 
 ## Controller Firmware
@@ -40,7 +40,7 @@ An initial Arduino firmware for the ESP8266 allowing step-by-step channel naviga
 * The VCO DC was measured with a digital multimeter (DMM) and logged to the spreadsheet [alps_mdlp3w104a_vco_voltages_2026-08-15.ods](documents/alps_mdlp3w104a_vco_voltages_2026-08-15.ods) the result was plottet to the following [diagram](pictures/UHF-Modulator_ALPS_MDLP3W104A_VCO_Voltage_2026-08-12.png).
   * The VCO gain in "MHz per Volt" was also calculated and plotted.
 
-<img width="640" src="pictures/UHF-Modulator_ALPS_MDLP3W104A_VCO_Voltage_2026-08-12.png">
+<img width="800" src="pictures/UHF-Modulator_ALPS_MDLP3W104A_VCO_Voltage_2026-08-12.png">
 
 ### VCO Step Response
 TBD
