@@ -63,6 +63,7 @@ On the modulator PCB, the I2C data lines feature 270 Ω series termination resis
 For example, the ESP8266 accepts a maximum of 25% of its supply voltage as a valid LOW level (i.e., 825 mV when powered at 3.3 V).
 
 <br clear="left">
+
 If communication issues occur, consider using an active bus driver or an I2C isolator (e.g., [ISO1540](https://www.ti.com/product/de-de/ISO1540)).
 
 ### PLL Lock Indicator
